@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.izquierda{
+    background: #FCD21D;
+    height: 50vh;
+}
+
+.derecha{
+    background: url(fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 50;
+    height: 100vh;
+}
+
+#pantalla-dividida{
+    display: flex;
+}
