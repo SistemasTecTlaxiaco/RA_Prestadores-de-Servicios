@@ -22,15 +22,12 @@
                     a los prestadores de servicio para que puedan conseguir
                     trabajo de una manera facil, confiable y segura.</p>
                 </div>
-
                 <div class="Columna3">
                     <h1>Información contactos</h1>
-                    
                     <div class="row2">
                         <a href="mapa.php"><img src="../img/casa.png" width="50" height="50"></a>
                         <label>Heroica Cd. de Tlaxiaco</label>
                     </div>
-
                     <div class="row2">
                         <a href="https://api.whatsapp.com/send/?phone=+52%209515879097&text=Hola,%20Bienvenid@%20al%20sistema%20EGAL,%20en%20que%20podemos%20servirle." target="_blank">
                             <img src="./img/logo-whatsapp.png" width="50" height="50">

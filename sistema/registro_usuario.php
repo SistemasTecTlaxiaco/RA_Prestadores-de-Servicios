@@ -31,7 +31,6 @@
 		}
 	}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,16 +61,13 @@
 
 	$query_rol = mysqli_query($conection,"SELECT * FROM rol");
 	$result_rol = mysqli_num_rows($query_rol);
-	
 ?>
-
 <select name="rol" id="rol">
 	<?php  
 		if ($result_rol > 0) {
 			while ($rol = mysqli_fetch_array($query_rol)) {
 	?>
 			<option value="<?php echo $rol["idrol"]; ?>"><?php echo $rol["rol"]; ?></option>
-
 	<?php
 			}
 		}
