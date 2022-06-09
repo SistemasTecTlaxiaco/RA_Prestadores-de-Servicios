@@ -17,6 +17,7 @@
         <a-asset-item
           id="avatarModel"
           src="https://cdn.glitch.global/f12f1a3a-5b2e-48bc-b9ea-5b9b3aedb33d/CASA5.gltf?v=1650214008261"
+          
         ></a-asset-item>
       </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>

@@ -22,16 +22,16 @@ session_start();
        <div>
          <h3 class="txt">OBJETOS EN 3D</h3>
          <br>
-				<a href="casa-hiro.php" class="boton">Casa-hiro</a>
+				<a href="casa-hiro.php" class="boton">Casa-Hiro</a>
         <a href="casa-Min-Ar.php" class="boton">Casa-MindAr</a>
         <br>
          <div>
-         <a href="persona-hiro.php" class="boton">Persona-hiro</a>
+         <a href="persona-hiro.php" class="boton">Persona-Hiro</a>
         <a href="persona-MindAr.php" class="boton">Persona-MindAr</a>
         <br>
          <div>
-         <a href="../" class="boton">Trabajardor-hiro</a>
-        <a href="../" class="boton">Casa-MindAr</a>
+         <a href="secretaria-hiro.php" class="boton">Secretaria-Hiro</a>
+        <a href="secretaria_mindAr.php" class="boton">Secretaria-MindAr</a>
         </div>
         </div>
         </div>

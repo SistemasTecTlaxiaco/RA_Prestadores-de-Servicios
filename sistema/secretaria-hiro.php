@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 ?>  
@@ -8,12 +7,10 @@ session_start();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <?php include "includes/scripts.php" ?>
-  <title>Persona-Hiro</title>
+  <title>Secretaria-Hiro</title>
   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"> </script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    
-</head >
+</head>
 <style >
   .boton{
     background-color: #0000FF;
@@ -36,13 +33,16 @@ session_start();
 <a href="RA_objetos.php" id="salir" class="boton">Salir</a> 
 
 </div>
-<body style='margin: 0px; overflow: hidden;' > </body>
+<body style='margin: 0px; overflow: hidden;'> </body>
 <a-scene embedded arjs="debugUIEnabled: false;" vr-mode.ui="enabled: false" >
     <a-marker preset='hiro'>
     
-        <a-entity id="entityId" gltf-model="Persona.glb" scale="1.5 1.5 1.5" >
+        <a-entity  gltf-model="Secretaria2.gltf" scale="1.5 1.5 1.5" >
 
         </a-marker>  
     <a-entity camera></a-entity>
   </a-scene>
+
+
+</style>
 </html>
