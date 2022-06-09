@@ -6,7 +6,6 @@
 		if (empty($_POST['correo']) || empty($_POST['usuario'])) {
 			$alert='<p class="msg_error">El campo es obligatorio.</p>';
 		}else{
-			
 			$email = $_POST['correo'];
 
 			$query = mysqli_query($conection,"SELECT * FROM usuario WHERE correo = '$email'");
@@ -45,7 +44,6 @@
 			<div class="alert"><?php echo isset($alert)? $alert : ''; ?></div>
 				<label for="correo">Correo Electrónico</label>
 				<input type="email" name="correo" id="correo" placeholder="Correo electrónico">
-
 				<input type="submit" value="Enviar" class="btn_save">
 			</form>
 		</div>

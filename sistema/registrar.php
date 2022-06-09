@@ -86,7 +86,6 @@ if (!empty($_POST)) {
      
         <label for="pago">Forma de pago:</label>
         <input type="text" id="pago" name="pago">
-
         <p>
           <label for="foto">Fotografia</label><br>
           <input type="file" name="foto" id="foto" required>

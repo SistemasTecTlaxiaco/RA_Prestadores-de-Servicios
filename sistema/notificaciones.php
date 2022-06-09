@@ -20,7 +20,6 @@
 				</h3>
 			</form>
 		</div>
-		
 	</section>
 	<?php include "includes/footer.php" ?>
 </body>

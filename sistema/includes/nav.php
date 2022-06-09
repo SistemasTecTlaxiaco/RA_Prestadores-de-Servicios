@@ -20,5 +20,8 @@
 				<li class="principal">
 					<a href="actualizar_perfil.php">Perfil</a>
 				</li>
+				<li class="principal">
+					<a href="RA_objetos.php">Realidad aumentada</a>
+				</li>
 			</ul>
 		</nav>

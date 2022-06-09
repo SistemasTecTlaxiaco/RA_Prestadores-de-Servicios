@@ -25,7 +25,6 @@
 				  la excelencia en el servicio, gane el mercado y ofrezca nuevas oportunidades de trabajos.
 			</div>
 		</div>
-    
     	<div class="item">
 			<div class="item-text">
         		<h1><center><font color="#1A33BC">VISIÓN</center></font></h1>
@@ -34,7 +33,6 @@
 		    	gracias al desarrollo continuo del primer gráfico económico del mundo.
 			</div>
 		</div>
-
 		<div class="item">
 			<div class="item-text">
         		<h1><center><font color="#1A33BC">VALORES</center></font></h1>
