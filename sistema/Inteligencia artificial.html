@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html>
+
+<!-- INICIALIZAMOS LOS SCRIPTS A UTILIZAR -->
+
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<!-- FINALIZAN LOS SCRIPTS -->
+
+
+<!-- INICIALIZAMOS LOS ESTILOS -->
+<style>.hints span {
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+div {
+  height: 100px;
+  overflow: auto;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.2);
+  text-align: center;
+  font-size: 25px;
+  font-family: Verdana;
+  font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+}
+</style>
+<!-- FINALIZAMOS LOS ESTILOS -->
+
+  <head>
+    <meta charset="utf-8">
+    
+  </head>
+
+
+  <body style='margin : 0px; overflow: hidden;'>
+  
+    <p class="hints"></p>
+       
+
+         <!-- CODIGO DE REALIDAD AUMENTADA -->
+         <a-scene
+         mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/image-tracking/assets/card-example/card.mind;"
+         color-space="sRGB"
+         renderer="colorManagement: true, physicallyCorrectLights"
+         vr-mode-ui="enabled: false"
+         device-orientation-permission-ui="enabled: false"
+       >
+         <a-assets>
+           <a-asset-item
+             id="avatarModel"
+             
+             src="https://cdn.glitch.global/f12f1a3a-5b2e-48bc-b9ea-5b9b3aedb33d/Secretaria2.gltf?v=1654752024191"
+           ></a-asset-item>
+         </a-assets>
+         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+         <a-entity mindar-image-target="targetIndex: 0">
+           <a-gltf-model
+             rotation="0 0 0 "
+             position="0 0 0.1"
+             scale="1 1 1"
+             src="#avatarModel"
+             animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+           >
+           </a-gltf-model>
+         </a-entity>
+       </a-scene>
+    
+
+
+    <!-- INICIALIZO EL SCRIPT QUE CONTIENE TODOS LOS COMANDOS -->
+    <script>
+// ESTE CONTADOR ESTA RELACIONADO CON LA LINEA DE CODIGO 217 Y 225
+    window.contador=0;
+//  ESTE CONTADOR ESTA RELACIONADO CON LA LINEA  282 Y 290
+    window.contadorcubogrande=0;
+
+/* CREMOS LAS VARIABLES QUE NOS PERMITEN UTILIZAR EL SPEECHRECOGNITION */
+      var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+      var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+      var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+
+/* CREAMOS UN ARREGLO LLAMADO arreglovoz EL CUAL CONTRENDRA TODOS LOS COMANDOS QUE QUERAMOS AGREGAR Y QUE EL SISTEMA RECONOCERA */
+var arreglovoz = [  'Buenas tardes asistente',
+                          'asistente hola',
+                          'Hola',
+                          'gracias',
+                          'Gracias asistente',
+                          
+                          'Disculpa asistente',
+                          'asistente',
+                          'Asistente me puedes ayudar',
+                          'me puedes ayudar asistente',
+                          'no Eso es todo por ahora',
+                          'asistente eso es todo por ahora',
+                          'Necesito un Mecanico',
+                            'Dame su nombre completo',
+                           'dame su numero de telefono',
+                          'dame su direccion',
+                          'Adiós Asistente',
+              ];
+
+
+/* INICIALIAMOS LA GRAMATICA Y EL SPECHRECOGNITION */
+var grammar = '#JSGF V1.0; grammar arreglovoz; public <arreglovoz> = ' + arreglovoz.join(' | ') + ' ;'
+
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+recognition.continuous = false; 
+/* IDIOMA A SELECCIONAR EN ESTE CASO ESTA EN ESPAÑOL COLOMBIA PERO SE PUEDEN SELECCIONAR DE LA LISTA QUE GOOGLE TENGA*/
+recognition.lang = 'es-CO';
+/* FINALIZA LA SELECCION DE IDIOMA*/
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
+/* VARIABLE RELACIONADA A LAS LINEAS 405 A 415*/
+var diagnostic = document.querySelector('.output');
+
+
+
+/* VARIABLE REALACIONADA CON LA LINEA DE CODIGO 13 y 40*/
+var hints = document.querySelector('.hints');
+
+
+var vozHTML= '';
+arreglovoz.forEach(function(v, i, a){
+  console.log(v, i);
+  
+});
+
+
+
+document.onkeydown = function() {
+ recognition.start();
+ console.log('Estoy lista para escuchar.');
+
+}
+
+
+
+
+recognition.onresult = function(event) {
+  // La propiedad de resultados SpeechRecognitionEvent devuelve un objeto SpeechRecognitionResultList
+  // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
+
+  // El objeto SpeechRecognitionResultList contiene objetos SpeechRecognitionResult.
+  // The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
+
+  // Tiene un captador para que se pueda acceder como una matriz.
+  // It has a getter so it can be accessed like an array.
+
+  // El primer [0] devuelve el SpeechRecognitionResult en la última posición.
+  // The first [0] returns the SpeechRecognitionResult at the last position.
+
+  // Cada objeto SpeechRecognitionResult contiene objetos SpeechRecognitionAlternative que contienen resultados individuales.
+  // Each SpeechRecognitionResult object contains SpeechRecognitionAlternative objects that contain individual results.
+
+  // Estos también tienen captadores para que se pueda acceder a ellos como matrices.
+  // These also have getters so they can be accessed like arrays.
+
+  // El segundo [0] devuelve SpeechRecognitionAlternative en la posición 0.
+  // The second [0] returns the SpeechRecognitionAlternative at position 0.
+
+  // Luego devolvemos la propiedad de transcripción del objeto SpeechRecognitionAlternative
+  // We then return the transcript property of the SpeechRecognitionAlternative object
+  var voz = event.results[0][0].transcript;
+  diagnostic.textContent = 'Dijiste: ' + voz + '.';
+ 
+
+  bg = voz;
+  var bg = document.querySelector('caja');
+
+  
+  //VISUALIZO EN CONSOLA
+  console.log(bg);
+  console.log(voz);
+
+
+// INTERACCIONES INICIALES PARA HACER MEJOR LA CONVERSACION PERO NO TIENEN NADA QUE VER CON AR
+  
+if(voz === 'Hola asistente'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Hola, soy tu asistente, puedes preguntarme ')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+            }
+    
+            if(voz === 'Buenas tardes asistente'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Hola, soy tu asistente, puedes preguntarme')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+            }
+    
+            if(voz === 'Buenas tardes food exe'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Hola, soy tu asistente, puedes preguntarme')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+            }
+        
+        if(voz === 'Hola'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Hola, soy tu asistente, puedes preguntarme')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+            }
+    
+           
+    
+            if(voz === 'gracias'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Por nada, algo mas en que te pueda ayudar')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+            }
+    
+            if(voz === 'Disculpa asistente'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Digame')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+            }
+    
+            if(voz === 'Gracias asistente'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Por nada, algo mas en que te pueda ayudar')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+          if(voz === 'asistente'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Hola, soy tu asistente, puedes preguntarme')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+          if(voz === 'Asistente me puedes ayudar'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Claro, como puedo ayudarle')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+          if(voz === 'me puedes ayudar asistente'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Claro, como puedo ayudarle')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+         
+          if(voz === 'no Eso es todo por ahora'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('esta bien, hablamos pronto')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+          if(voz === 'Necesito un Mecanico'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Claro, ahorita se encuentra disponible un mecanico con el nombre de David')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+        
+          //INFORMACION SOBRE HELADO
+          if(voz === 'Dame su nombre completo'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('claro, su nombre completo es david acevedo rodriguez')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+          if(voz === 'dame su numero de telefono'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('claro, su numero es 9 5 3 6 8 4 7 2  6 1')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+    
+          if(voz === 'dame su direccion'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('claro, su direccion es calle isabel la catolica numero 3, del barrio de san sebastian, tlaxiaco, Oaxaca')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+          
+          if(voz === 'Adiós Asistente'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance(' hablamos pronto ')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+    
+          
+    
+          if(voz === 'gracias'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('hasta luego')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+
+// IF NUMERO 11
+
+console.log('Confidence: ' + event.results[0][0].confidence);
+}
+
+
+recognition.onspeechend = function() {
+  recognition.stop();
+}
+
+recognition.onnomatch = function(event) {
+  diagnostic.textContent = "No puedo escucharte claramente, por favor repiteme.";
+}
+
+recognition.onerror = function(event) {
+  diagnostic.textContent = 'Ocurrio un error al escucharte: ' + event.error;
+}
+ </script>
+
+  </body>
+</html>

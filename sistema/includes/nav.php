@@ -23,5 +23,8 @@
 				<li class="principal">
 					<a href="RA_objetos.php">Realidad aumentada</a>
 				</li>
+				<li class="principal">
+					<a href="Inteligencia artificial.html">Inteligencia artificial</a>
+				</li>
 			</ul>
 		</nav>

@@ -26,12 +26,12 @@ session_start();
         <a href="casa-Min-Ar.php" class="boton">Casa-MindAr</a>
         <br>
          <div>
-         <a href="persona-hiro.php" class="boton">Persona-Hiro</a>
-        <a href="persona-MindAr.php" class="boton">Persona-MindAr</a>
-        <br>
-         <div>
          <a href="secretaria-hiro.php" class="boton">Secretaria-Hiro</a>
         <a href="secretaria_mindAr.php" class="boton">Secretaria-MindAr</a>
+        <br>
+         <div>
+        <a href="persona-hiro.php" class="boton">Persona-Hiro</a>
+        <a href="persona-MindAr.php" class="boton">Persona-MindAr</a>
         </div>
         </div>
         </div>
