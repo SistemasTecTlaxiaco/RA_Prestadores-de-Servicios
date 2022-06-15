@@ -16,7 +16,7 @@
       <a-assets>
         <a-asset-item
           id="avatarModel"
-          src="https://cdn.glitch.global/f12f1a3a-5b2e-48bc-b9ea-5b9b3aedb33d/Persona.glb?v=1654836228978"
+          src="https://cdn.glitch.global/f12f1a3a-5b2e-48bc-b9ea-5b9b3aedb33d/asistente.glb?v=1655268112714"
         ></a-asset-item>
       </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>

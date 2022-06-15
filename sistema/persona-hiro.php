@@ -40,7 +40,7 @@ session_start();
 <a-scene embedded arjs="debugUIEnabled: false;" vr-mode.ui="enabled: false" >
     <a-marker preset='hiro'>
     
-        <a-entity id="entityId" gltf-model="Persona.glb" scale="1.5 1.5 1.5" >
+        <a-entity id="entityId" gltf-model="asistente.glb" scale="1.5 1.5 1.5" >
 
         </a-marker>  
     <a-entity camera></a-entity>
