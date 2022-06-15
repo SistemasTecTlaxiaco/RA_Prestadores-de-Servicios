@@ -47,5 +47,5 @@ Esta plataforma web está desplegada en un dominio al cual todos pueden tener ac
 
 
   ## LINK DE LA APLICACIÓN 
-## 
+## http://raprueba.herokuapp.com/
 
