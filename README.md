@@ -1,4 +1,4 @@
-# RA_Prestadores-de-Servicios
+# Proyecto de Realidad Aumentada-Prestadores de Servicios
 
 
  ## OBJETIVO DEL PROYECTO
