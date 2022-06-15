@@ -1,10 +1,5 @@
 # RA_Prestadores-de-Servicios
-La transformación digital ha traído consigo grandes retos para las empresas y la situación que se vive actualmente ha acelerado la digitalización, pues muchos negocios,
-tanto grandes como pequeños, tuvieron que verse en la necesidad de hacer cambios drásticos en sus organizaciones para seguir funcionando óptimamente y mantenerse en la 
-preferencia de los consumidores, tal es el caso de la PC BOX un establecimiento con giro comercial dedicado a la venta de accesorios de cómputo, para el cual se diseñó
-un modelo de negocio implementando un sistema el cual pretende automatizar procesos internos, unificar la información de la empresa sin necesidad de terceras personas 
-para poder realizar operaciones, brindar un mejor servicio al cliente proporcionando información actualizada sobre los productos que ofrece agilizando el proceso de 
-compra y optimizando recursos e incrementando su productividad.
+
 
  ## OBJETIVO DEL PROYECTO
 Desarrollar un sistema para brindar servicios a través de una pagina web donde un usuario pueda ofrecer sus oficios de una manera fácil, confiable y segura.
