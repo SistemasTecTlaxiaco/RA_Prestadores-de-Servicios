@@ -97,9 +97,13 @@
                           'me puedes ayudar asistente',
                           'no Eso es todo por ahora',
                           'asistente eso es todo por ahora',
-                          'Necesito un Mecanico',
-                            'Dame su nombre completo',
-                           'dame su numero de telefono',
+                          'Necesito un albañil',
+                          'Necesito una niñera',
+                          'Necesito un carpintero',
+                          'Dame los empleados',
+                          'Dame su nombre completo',
+                          // 'dame su numero de telefono',
+                          'Datos',
                           'dame su direccion',
                           'Adiós Asistente',
 
@@ -214,13 +218,27 @@
               speechSynthesis.speak(utterance)     
           }
     
-          if(voz === 'Necesito un Mecánico'){
+          if(voz === 'Necesito un albañil'){
               //console.log("Hola, estas saludando!");
-              let utterance = new SpeechSynthesisUtterance('Claro, ahorita se encuentra disponible un mecanico con el nombre de David')
+              let utterance = new SpeechSynthesisUtterance('Claro, ahorita se encuentra disponible un albañil con el nombre de Josue Morales Reyes')
               utterance.lang = 'es-MX'
               speechSynthesis.speak(utterance)     
           }
-    
+          
+          //Carpintero
+          if(voz === 'Necesito un carpintero'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Claro, ahorita se encuentra disponible Samuel Martinez Martinez, Dirección: Colonia centro, tlaxiaco, Oaxaca y su Gmail: Samuel@gmail.com')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
+
+          if(voz === 'Dame los empleados'){
+              //console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Albañil, carpintero, niñera, cocinera, plomero, electricista, limpieza generarl y camarera.')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)     
+          }
         
           //INFORMACION SOBRE HELADO
           if(voz === 'Dame su nombre completo'){
@@ -230,9 +248,9 @@
               speechSynthesis.speak(utterance)     
           }
     
-          if(voz === 'Dame su número de teléfono'){
+          if(voz === 'Dame referencias'){
               //console.log("Hola, estas saludando!");
-              let utterance = new SpeechSynthesisUtterance('claro, su numero es 9 5 3 6 8 4 7 2  6 1')
+              let utterance = new SpeechSynthesisUtterance('claro, vive en  Centro, Oaxaca, Oaxaca y su celular es el siguiente: nueve cinco tres seis dos ocho cuatro siete cinco nueve')
               utterance.lang = 'es-MX'
               speechSynthesis.speak(utterance)     
           }
@@ -251,7 +269,7 @@
               utterance.lang = 'es-MX'
               speechSynthesis.speak(utterance)     
           }
-          if(voz === 'Ayudame a buscar una niñera'){
+          if(voz === 'Necesito una niñera'){
               //console.log("Hola, estas saludando!");
               let utterance = new SpeechSynthesisUtterance('claro, ahora tengo dos niñeras disponibles, mildrel de 24 años y lizzet  de 28 años')
               utterance.lang = 'es-MX'
