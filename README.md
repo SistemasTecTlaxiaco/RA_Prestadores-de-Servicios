@@ -37,12 +37,14 @@ Esta plataforma web está desplegada en un dominio al cual todos pueden tener ac
   
   ## LINKS DE LIBRERIAS UTILIZADAS 
   <ul>
-<li> 
-<li> 
-<li> 
-<li> 
-<li> 
-</ul>
+<li>https://aframe.io/releases/1.0.0/aframe.min.js
+<li>https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js
+<li>https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js
+<li>https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js
+<li>https://aframe.io/releases/1.2.0/aframe.min.js
+<li>https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js
+ </ul>
+
 
   ## LINK DE LA APLICACIÓN 
 ## 
