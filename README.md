@@ -1,9 +1,10 @@
 # Proyecto de Realidad Aumentada-Prestadores de Servicios
 
+ ## DESCRIPCIÓN DEL PROYECTO
+Prestadores de servicio "EGAL" es una página web para prestadores de servicios como albañilería, plomeros, carpinteros, niñeras, cocineras, de limpieza etc. Esta plataforma es un medio para poder brindarle al cliente el mejor servicio a través de una página web para su uso cotidiano, al mismo tiempo ayudar a los prestadores de servicio para que puedan conseguir trabajo de una manera facil, confiable y segura.
 
  ## OBJETIVO DEL PROYECTO
 Desarrollar un sistema para brindar servicios a través de una pagina web donde un usuario pueda ofrecer sus oficios de una manera fácil, confiable y segura.
-
 
  ## OBJETIVOS ESPECIFICOS
 <ul>
