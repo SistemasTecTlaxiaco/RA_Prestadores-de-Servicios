@@ -34,7 +34,7 @@ Esta plataforma web está desplegada en un dominio al cual todos pueden tener ac
 
  | **Nombre** | **Rol** | 
   |------------|-----|
-  |Antonio González Hernández| Lider Téster
+  |Antonio González Hernández| Lider y Téster
   |Graciela hernández Santiago |Programadora y Analista
   |Eva Aguilar Avendaño| Diseñadora frontend 
   |Lizzeth Quiroz Cortes | Diseñadora backend
