@@ -34,10 +34,10 @@ Esta plataforma web está desplegada en un dominio al cual todos pueden tener ac
 
  | **Nombre** | **Rol** | 
   |------------|-----|
-  |Antonio González Hernández| Téster
+  |Antonio González Hernández| Lider Téster
   |Graciela hernández Santiago |Programadora y Analista
-  |Eva Aguilar Avendaño| Diseñadora
-  |Lizzeth Quiroz Cortes | Diseñadora
+  |Eva Aguilar Avendaño| Diseñadora frontend 
+  |Lizzeth Quiroz Cortes | Diseñadora backend
   
   ## LINKS DE LIBRERIAS UTILIZADAS 
   <ul>
