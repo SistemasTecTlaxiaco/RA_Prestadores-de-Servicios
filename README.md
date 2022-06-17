@@ -20,6 +20,8 @@ Desarrollar un sistema para brindar servicios a través de una pagina web donde 
 Prestadores de servicios “EGAL”, es un proyecto que pretende expandir las oportunidades de trabajo de las personas de la región de Tlaxiaco, esto a través de una plataforma en la que los usuarios pueden registrarse y acceder a distintos trabajos.  A su vez, cada una de las personas que deseen ofrecer su servicio haciendo uso de la plataforma podrán crear una cuenta para llevar un control sobre el servicio que ofrece. Cada una de las personas tendrán que verificar su perfil para dar fe sobre la autenticidad de su servicio y que de esta forma se evite el mal uso de estos servicios que se ofrecen. 
 Esta plataforma web está desplegada en un dominio al cual todos pueden tener acceso ya sean usuarios que desean ofrecer sus servicios o personas que deseen un servicio de la plataforma, pretende ofrecer una experiencia favorable para los usuarios. Prestadores de servicios “EGAL”nos interesa al 100% que las personas que se encuentren sin trabajo puedan ofrecer sus servicios y así obtengan ganancias justas por la labor que desempeñan y que el cliente este totalmente satisfecho al momento de adquirir algún servicio de la plataforma.
 
+##DEMO DE LA RA
+##https://youtu.be/xMVCWqY2nFw
 
 ## REQUISITOS
 <ul>
