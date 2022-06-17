@@ -2,6 +2,7 @@
 
  ## DESCRIPCIÓN DEL PROYECTO
 Prestadores de servicio "EGAL" es una página web para prestadores de servicios como albañilería, plomeros, carpinteros, niñeras, cocineras, de limpieza etc. Esta plataforma es un medio para poder brindarle al cliente el mejor servicio a través de una página web para su uso cotidiano, al mismo tiempo ayudar a los prestadores de servicio para que puedan conseguir trabajo de una manera facil, confiable y segura.
+![](https://github.com/SistemasTecTlaxiaco/Prestadores-de-servicio-EGAL-/blob/fe9d4ad709f73c6526042439302913b257dfecfc/Im%C3%A1genes_wiki/images(prestadores%20de%20servicio).jpg)
 
  ## OBJETIVO DEL PROYECTO
 Desarrollar un sistema para brindar servicios a través de una pagina web donde un usuario pueda ofrecer sus oficios de una manera fácil, confiable y segura.
@@ -26,6 +27,8 @@ Esta plataforma web está desplegada en un dominio al cual todos pueden tener ac
 <li>Dispositivo Movil</li>
 </ul>
 
+## DEMO DE LA RA
+<li>
 
 ## EQUIPO DE DESARROLLO 
 
