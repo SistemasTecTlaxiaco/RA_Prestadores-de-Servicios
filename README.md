@@ -54,6 +54,5 @@ Esta plataforma web está desplegada en un dominio al cual todos pueden tener ac
 ## http://raprueba.herokuapp.com/
 
  
-  ## LINK DEL VIDEO
- ## https://youtu.be/xMVCWqY2nFw
+
  
